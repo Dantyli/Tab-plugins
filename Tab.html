@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>Tab</title>
+		<style>
+			.tabs {
+				margin-left: 30%;
+			}
+			
+			li {
+				font-style: none;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.header li {
+				display: inline-block;
+				float: left;
+				margin-left: 20px;
+				height: 100px;
+				width: 100px;
+				border: 1px solid #e2e2e2
+			}
+			
+			.header .active {
+				background: #00ff00
+			}
+			
+			.contain {
+				border: 1px solid #e2e2e2;
+				height: 400px;
+				width: 400px;
+			}
+			
+			.contain li {
+				display: none;
+				height: 300px;
+				width: 300px;
+				background: #f1f1f1;
+				float: left;
+			}
+			
+			.contain .liShow {
+				display: inline-block;
+				animation: myfirst 300ms;
+				margin-left: 40px;
+			}
+			@-moz-keyframes myfirst {
+				from {
+					transform: scale(0);
+				}
+				to {
+					transform: scale(1);
+				}
+			}
+      @-webkit-keyframes myfirst {
+				from {
+					transform: scale(0);
+				}
+				to {
+					transform: scale(1);
+				}
+			}
+       @-ms-keyframes myfirst {
+				from {
+					transform: scale(0);
+				}
+				to {
+					transform: scale(1);
+				}
+			}
+			@keyframes myfirst {
+				from {
+					transform: scale(0);
+				}
+				to {
+					transform: scale(1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tabs">
+			<ul class="header">
+				<li class="active">one</li>
+				<li>two</li>
+				<li>three</li>
+			</ul>
+			<ul class="contain">
+				<li class="liShow">one is beauty</li>
+				<li>two is handsamoe</li>
+				<li>three is sun</li>
+			</ul>
+		</div>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="tabs.js"></script>
+		<script>
+		  //插件调用和配置
+			$('.tabs').tabs({
+				tabNav: '.header>li',
+				tabContent: '.contain>li',
+				currentNav: 'active',
+				event: 'click'
+			});
+		</script>
+	</body>
+</html>
